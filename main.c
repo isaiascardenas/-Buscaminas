@@ -24,6 +24,7 @@ int main() {
     board.matrix[x][y].hidden = 0;
     board.matrix[x][y].content = input;
     setBombs(board, bombs, x, y);
+    setNumbers(board);
     board.showBoard(rows, columns, board.matrix);
     while(1) {
 

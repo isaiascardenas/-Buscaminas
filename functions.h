@@ -6,7 +6,7 @@ char validateInput(Board board, int *x, int *y) {
 	while(1) {
 		printf("\nIngrese jugada:   ");
     	scanf("%d %d %c", x, y, &input);
-    	if (*x < board.rows || *y < board.columns && board.matrix[*x][*y].hidden)
+    	if (*x<board.rows && *y<board.columns && *y>=0  && x>=0 )//&& board.matrix[*x][*y].hidden)
 	    {
             return input;
 	    }
