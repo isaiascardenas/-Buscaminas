@@ -4,7 +4,8 @@
 #include "BoardBlock.h"
 
 int main() {
-    int i, j, rows, columns;
+    int x, y, rows, columns;
+    char user;
     Board board;
     BoardBlock **matrix;
 
@@ -15,20 +16,19 @@ int main() {
 
     board = initBoard(rows, columns);
 
-    // matrix = createMatrix(rows, columns);
-
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < columns; j++) {
-        	board.matrix[i][j] = initBoardBlock();
+    for (x = 0; x < rows; x++) {
+        for (y = 0; y < columns; y++) {
+        	board.matrix[x][y] = initBoardBlock();
         }
     }
 
     board.showBoard(rows, columns, board.matrix);
 
-    // BoardBlock board = initBoardBlock();
-    // printf("content1: %c\n", board.content);
-    // board.setContent('h', &board.content);
-    // printf("content2: %c\n", board.content);
-
+    while(1) {
+        printf("\nIngrese jugada:   ");
+        scanf("%d %d %c", &x, &y, &user);
+        board.changeBlock(x, y, user, board.matrix);
+        board.showBoard(rows, columns, board.matrix);
+    }
 }
 

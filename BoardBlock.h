@@ -16,9 +16,9 @@ void SetContent(char content, char *boardContent) {
 
 BoardBlock initBoardBlock() {
 	BoardBlock board =  {
-		0,
-		'a',
 		1,
+		'#',
+		0,
 		SetContent
 	};
 	return board;
