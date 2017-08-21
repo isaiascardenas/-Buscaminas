@@ -7,7 +7,6 @@ typedef struct
     int columns;
     BoardBlock **matrix;
     void (*showBoard)(int, int, BoardBlock**);
-    void (*changeBlock)(int, int, char, BoardBlock**);
     
 } Board;
 
@@ -21,23 +20,30 @@ void ShowBoard(int rows, int columns, BoardBlock **matrix) {
 	for (i = 0; i < rows; ++i) {
         printf("%d ",i );
      	for (j = 0; j < columns; ++j) {
-        	printf("%c ", matrix[i][j].content);
+            if (matrix[i][j].hidden)
+            {
+                printf("- ");
+            } else {
+                printf("%c ", matrix[i][j].content);
+            }
+        	
     	}
     	printf("\n");
 	}
 }
 
-void ChangeBlock(int x, int y, char content, BoardBlock **matrix) {
-    matrix[x][y].setContent(content, &matrix[x][y].content);
-}
-
-int CanChange(int x, int y, int rows, int columns, BoardBlock **matrix) {
-    if (x > rows || y > columns)
-    {
-        /* code */
+Board setBombs(Board board, int bombs, int xUser, int yUser) {
+    int x, y, countBombs = 0;
+    while(countBombs < bombs) {
+        x = rand()% board.rows;
+        y = rand()% board.columns;
+        if (! board.matrix[x][y].bomb && x!=xUser && y!=yUser)
+        {
+            board.matrix[x][y].bomb = 1;
+            board.matrix[x][y].content = '0';
+            countBombs++;
+        }
     }
-    
-    return 0;
 }
 
 Board initBoard(int rows, int columns) {
@@ -50,8 +56,7 @@ Board initBoard(int rows, int columns) {
         rows,
         columns,
         tempMatrix,
-        ShowBoard,
-        ChangeBlock
+        ShowBoard
     };
     return board;
 }
