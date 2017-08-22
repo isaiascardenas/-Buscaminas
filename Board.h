@@ -1,5 +1,7 @@
 #pragma once
 #include "BoardBlock.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 typedef struct
 {
@@ -22,6 +24,8 @@ void ShowBoard(int rows, int columns, BoardBlock **matrix) {
      	for (j = 0; j < columns; ++j) {
             if (matrix[i][j].hidden) {
                 printf("- ");
+            } else if (!matrix[i][j].hidden && matrix[i][j].check) {
+                printf("X");
             } else {
                 printf("%c ", matrix[i][j].content);
             }
@@ -53,17 +57,12 @@ int sumBombs(Board board, int x, int y) {
 }
 
 void setNumbers(Board board) {
-    int number;
-    char temp;
+    int number = 0;
     for (int i = 0; i < board.rows; ++i) {
         for (int j = 0; j < board.columns; ++j) {
             number = sumBombs(board, i, j);
-            if (number > 0) {
-                // board.matrix[i][j].content = (char)number;
-                printf("number int: %d\n", number);
-                temp = (char)number;
-                printf("temp char: %c\n", temp);
-                // printf("board content: %c\n", board.matrix[i][j].content);
+            if (number > 0 && !board.matrix[i][j].bomb) {
+                board.matrix[i][j].content = (char)number+'0';
             }
         }
     }
@@ -76,10 +75,41 @@ void setBombs(Board board, int bombs, int xUser, int yUser) {
         y = rand()% board.columns;
         if (! board.matrix[x][y].bomb && x!=xUser && y!=yUser) {
             board.matrix[x][y].bomb = 1;
-            board.matrix[x][y].content = '0';
+            board.matrix[x][y].content = '#';
             countBombs++;
         }
     }
+} 
+
+int unHide(Board board, int x, int y) {
+    if (x+1>board.rows || y+1>board.columns || x<0 || y<0 || !board.matrix[x][y].hidden) {
+        return 0;
+    } else if (board.matrix[x][y].content =='#') {
+        board.matrix[x][y].hidden = 0;
+        return 1;
+    } else if (board.matrix[x][y].content !=' ') {
+        board.matrix[x][y].hidden = 0;
+        return 0;
+    }
+
+    board.matrix[x][y].hidden = 0;
+
+    return unHide(board, x+1, y) +
+    unHide(board, x-1, y) +
+    unHide(board, x, y+1) +
+    unHide(board, x, y-1);
+}
+
+int hiddenCount(Board board) {
+    int count = 0;
+    for (int i = 0; i < board.rows; ++i) {
+        for (int j = 0; j < board.columns; ++j) {
+            if (board.matrix[i][j].hidden) {
+                count++;
+            }
+        }
+    }
+    return count;
 }
 
 Board initBoard(int rows, int columns) {
