@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "Board.h"
 #include "functions.h"
 #include "BoardBlock.h"
@@ -19,7 +20,7 @@ int main() {
         }
     }
 
-    board.showBoard(rows, columns, board.matrix);
+    showBoard(board);
     input = validateInput(board, &x, &y);
     setBombs(board, bombs, x, y);
     setNumbers(board);
@@ -28,7 +29,7 @@ int main() {
         if (board.matrix[x][y].hidden) {
             unHide(board, x, y);
         }
-    } else {
+    } else if (input == 'X' && board.matrix[x][y].hidden) {
         if (board.matrix[x][y].check) {
             board.matrix[x][y].hidden  = 1;
             board.matrix[x][y].check = 0;
@@ -38,7 +39,7 @@ int main() {
         }
     }
     writeFile(board);
-    board.showBoard(rows, columns, board.matrix);
+    showBoard(board);
 
     while(!play) {
 
@@ -62,13 +63,18 @@ int main() {
         if (hiddenCount(board) == bombs) {
             play = 1;
             win = 1;
+            if (board.matrix[x][y].bomb) {
+                win = 0;
+            }
         }
-        board.showBoard(rows, columns, board.matrix);
+        showBoard(board);
     }
 
     if (win) {
         printf("\n\nGanaste :) !!\nFelicidades\n");
     } else {
-        printf("\n\nPerdiste :\'( ...\nInténtalo de nuevo");
+        printf("\n\nPerdiste :\'( ...\nInténtalo de nuevo\n");
     }
+    getchar();
+    return 0;
 }
