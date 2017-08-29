@@ -1,7 +1,7 @@
 #pragma once
-#include "BoardBlock.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include "BoardBlock.h"
 
 typedef struct {
     int rows;

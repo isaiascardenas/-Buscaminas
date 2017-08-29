@@ -1,7 +1,4 @@
-#include "BoardBlock.h"
 #include "Board.h"
-#include <string.h>
-#include <stdio.h>
 
 void showBoard(Board board) {
     int i, j;

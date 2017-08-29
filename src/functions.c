@@ -1,4 +1,3 @@
-#include "Board.h"
 #include "functions.h"
 
 char validateInput(Board board, int *x, int *y) {
