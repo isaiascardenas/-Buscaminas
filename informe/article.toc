@@ -1,0 +1,12 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{2}
+\contentsline {section}{\numberline {1.1}Introducci\'on al problema}{2}
+\contentsline {chapter}{\numberline {2}Descripci\'on del problema}{3}
+\contentsline {section}{\numberline {2.1}Descripci\'on del problema}{3}
+\contentsline {chapter}{\numberline {3}Descripci\'on de la soluci\'on}{5}
+\contentsline {section}{\numberline {3.1}Marco te\'orico}{5}
+\contentsline {section}{\numberline {3.2}Herramentas y t\IeC {\'e}cnicas}{6}
+\contentsline {section}{\numberline {3.3}Algoritmos y estructuras}{6}
+\contentsline {chapter}{\numberline {4}Conclusiones}{10}
+\contentsline {section}{\numberline {4.1}An\'alisis de los resultados}{10}
+\contentsline {section}{\numberline {4.2}Conclusiones}{10}
