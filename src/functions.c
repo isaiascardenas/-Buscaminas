@@ -26,10 +26,14 @@ void validateBoard(int *rows, int *columns, int *bombs) {
         printf("Ingrese cantidad de bombas >> ");
         scanf("%d", bombs);
 
-        if (*bombs < *rows * *columns - 1) {
-            return ;
+        if (*rows > 100 || *columns > 100) {
+            printf("\nTablero inválido, columnas y filas deben ser menores a 100\n");
         } else {
-            printf("\nTablero inválido, debe haber al menos 2 casillas sin bomba\n");
+            if (*bombs < *rows * *columns - 1) {
+                return ;
+            } else {
+                printf("\nTablero inválido, debe haber al menos 2 casillas sin bomba\n");
+            }
         }
     }
 }

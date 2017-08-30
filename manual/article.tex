@@ -70,7 +70,7 @@ Fecha de entrega & : & 30 de agosto de 2017
 \end{titlepage}
 
 \tableofcontents
-% \listoffigures
+\listoffigures
 % \listoftables
 
 \chapter {Introducci\'on}
@@ -157,13 +157,15 @@ Luego de compilar el programa se generará el archivo ejecutable, que en este ca
 
 \chapter{Funcionalidades del programa}
 
+\section {Funciones principales y simbologías}
+
 Una vez ejecutado el programa se le pedirá al usuario que ingrese la cantidad de filas, columnas y bombas que tendrá el tablero de juego, estos valores deben ser números enteros naturales para que el programa funcione correctamente. La cantidad de filas y columnas no deben ser mayores a 100 y la cantidad de bombas deben ser menor al área del tablero menos 2 casillas, de este modo el usuario no perderá en la primera jugada ni ganará en la primera jugada.
 
 Luego de ingresar los valores se generará el tablero de juego con los siguientes símbolos:
 
 \begin{description}[align=left]
 
-\item [`` \_~ ''] 
+\item [`` \string ~ ''] 
     En este archivo se define la estructura BoardBlock que será utilizada como la representación de las casillas del tablero y la definición de la función que inicializará a esta estructura. 
 
 \item [`` ' '':]
@@ -187,11 +189,32 @@ En donde ``fila'' y ``columna'' deben ser números naturales menores a 100 y jug
 
 El usuario podrá descubrir solamente las casillas que no han sido descubiertas y podrá marcar una casilla como posible bomba solamente a aquellas que no hayan sido descubiertas, el uso incorrecto de las acciones del usuario podrían ocasionar un mal funcionamiento del programa. Por otro lado el usuario deberá realizar acciones solo dentro del tablero, si ingresa coordenadas que se encuentran fuera del área del tablero el programa indicará que es una acción incorrecta.
 
-Tras la primera jugada del usuario el programa generará el archivo ``solución.out'' en el que se muestra el contenido del tablero del juego completamente descubierto, es decir, el usuario 
+Tras la primera jugada del usuario el programa generará el archivo ``solución.out'' en el que se muestra el contenido del tablero del juego completamente descubierto, es decir, es posible identificar las posiciones de las bombas y las pistas en el tablero. Al igual que en el tablero de juego, en el archivo solución las bombas estan simbolizadas con el carácter `` * '', las pistas con números y las casillas vacías estan representadas con `` ' ''.
 
 \chapter{Posibles errores}
 
+\section {Erores controlados}
 
-Se cumplen los objetivos propuestos y los requerimientos solicitados en el plazo estipulado, el uso de punteros y el manejo de memoria dinámica se logra en totalidad logarando crear una matriz bidimencional que contiene estructuras. ...
+Como se mencionó anteriormente el ingreso incorrecto de las entradas al programa podrían ocasionar un funcionamiento erróneo de éste, a pesar de que algúnos de estos errores esten controlados por el programa como en los siguientes casos.
+
+\begin{enumerate}
+
+\item Si el usuario intenta generar un tablero con mas de 100 filas o columnas el programa indicará que el tamaño del tablero es incorrecto y el usuario deberá ingresar nuevamente la cantidad de filas y columnas.
+
+\item Se considera tablero inválido aquel que no tenga al menos 2 espacios libres de bombas, de manera que el usuario no gane en la primera jugada. Si se intenta generar un tablero que no tenga al menos 3 casillas libres el programa indicará que es un tablero inválido y solicitara reingresar datos.
+
+\item En cada turno el jugador deberá ingresar coordenadas dentro del tablero para poder realizar acciones, si intenta realizar una jugada fuera del tablero el programa indicará que la jugada no es válida.
+
+\item Las acciones realizadas por el usuario solo pueden ser ``O'' ó ``X'', en caso de que se intente una jugada diferente el programa indicará que la jugada no es válida.
+
+\end{enumerate}
+
+\section {Posibles errores}
+
+A pesar de las restricciones mencionadas es posible que el programa funcione incorrectamente si las jugadas ingresadas por el usuario no están en el formato estipulado, dado que no fue posible restringir este error la ejecución del programa puede verse afectada por este error.
+
+Si el usuario intenta marcar una casilla que ya esta descubierta como posible bomba podría ocurrir que el programa trate de marcarla y esconda la casilla nuevamente, este error no pudo ser controlado por el programador, sin embargo la ejecución del programa no se ve comprometida por esta falla en el código.
+
+Pese a las fallas mencionadas anteriormente el programa es funcional en su totalidad y es posible realizar la jugabilidad del Buscaminas sin ningún problema, lo que indica que el proyecto fue completado con las especificaciones solicitadas y en el plazo estipulado.
 
 \end{document}

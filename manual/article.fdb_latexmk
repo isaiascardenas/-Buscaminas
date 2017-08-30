@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1504049169 "article.tex" "article.pdf" "article" 1504049169
+["pdflatex"] 1504052413 "article.tex" "article.pdf" "article" 1504052414
   "/etc/texmf/web2c/texmf.cnf" 1503610673 1101 af7716885e081ab43982cab7b4672c1a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -76,18 +76,19 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1503610859 1863403 f3ff9a4253bcb5fb9a9baaf0c572cb01 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1503611010 3853928 ecd9ccb02b325b10fe0db3d767d3f022 ""
-  "article.aux" 1504049169 1854 26b7ce28ed14d0f3a55f74b5ea787eb7 ""
-  "article.tex" 1504049168 10221 8e84e248ef161269f6abe1ccd200b1ed ""
-  "article.toc" 1504049169 535 e349177c3ddd4dc0fffcc78b4efa1e08 ""
+  "article.aux" 1504052414 2129 e57bc491307a556211aa4a88f67ec3e0 ""
+  "article.lof" 1504052414 551 8ff727f0c3ab2ad85458f5f60330bf7f ""
+  "article.tex" 1504052413 12408 cfa3bcdb26b963ea2d923029bfb7b729 ""
+  "article.toc" 1504052414 756 f63ef9adc165044c7d9b1d97acf9a4af ""
   "images/ejecLinux.png" 1504046033 63747 1057a19bfc7b7a1fc54d1d93f2cc9d9f ""
   "images/ejecWin.png" 1504037354 7115 f0288a68c88358c39faf72ab72f9d4f5 ""
   "images/gccLinux.png" 1504044795 63854 b232b11323df5f75c542eed920e5678f ""
   "images/gccWin.png" 1504045983 10025 1ebe34d5eaa2c241413a349501232a86 ""
   "images/logo.png" 1503608204 56409 cff2bb2c5a709072cbc77f64f38e4a01 ""
   (generated)
+  "article.aux"
   "article.lot"
-  "article.lof"
   "article.log"
   "article.pdf"
-  "article.aux"
   "article.toc"
+  "article.lof"

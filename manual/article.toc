@@ -1,9 +1,12 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Introducci\'on}{2}
-\contentsline {section}{\numberline {1.1}Introducci\'on}{2}
-\contentsline {chapter}{\numberline {2}C\'omo compilar y ejecutar}{3}
-\contentsline {section}{\numberline {2.1}Directorios y archivos}{3}
-\contentsline {section}{\numberline {2.2}Entorno Linux}{4}
-\contentsline {section}{\numberline {2.3}Entorno Windows}{5}
-\contentsline {chapter}{\numberline {3}Funcionalidades del programa}{7}
-\contentsline {chapter}{\numberline {4}Posibles errores}{9}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{3}
+\contentsline {section}{\numberline {1.1}Introducci\'on}{3}
+\contentsline {chapter}{\numberline {2}C\'omo compilar y ejecutar}{4}
+\contentsline {section}{\numberline {2.1}Directorios y archivos}{4}
+\contentsline {section}{\numberline {2.2}Entorno Linux}{5}
+\contentsline {section}{\numberline {2.3}Entorno Windows}{6}
+\contentsline {chapter}{\numberline {3}Funcionalidades del programa}{8}
+\contentsline {section}{\numberline {3.1}Funciones principales y simbolog\IeC {\'\i }as}{8}
+\contentsline {chapter}{\numberline {4}Posibles errores}{10}
+\contentsline {section}{\numberline {4.1}Erores controlados}{10}
+\contentsline {section}{\numberline {4.2}Posibles errores}{10}
